@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <script type="text/javascript"  >
+    var picPaths = ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg', 'images/6.jpg', 'images/7.jpg', 'images/8.jpg', 'images/9.jpg', 'images/10.jpg', 'images/11.jpg', 'images/12.jpg'];
+         
+            var curPic1 = -1,curPic2 = 0,curPic3 =1 ,curPic4 = 2,curPic5 = 3,curPic6 = 4;
+            
+            var imgO = new Array();
+            for(i=0; i < picPaths.length; i++) {
+                imgO[i] = new Image();
+                imgO[i].src = picPaths[i];
+            }
+
+          
+
+
+
+
+
+
+
+                
+
+var vr= setInterval(swapImage,2000);
+
+            function swapImage() {
+
+
+
+                curPic1 = (++curPic1 > picPaths.length-1)? 0 : curPic1;
+                imgCont1.src = imgO[curPic1].src;
+
+
+
+
+                
+
+                 curPic2 = (++curPic2 > picPaths.length-1)? 0 : curPic2;
+                imgCont2.src = imgO[curPic2].src;
+
+                 curPic3 = (++curPic3 > picPaths.length-1)? 0 : curPic3;
+                imgCont3.src = imgO[curPic3].src;
+
+                 curPic4 = (++curPic4 > picPaths.length-1)? 0 : curPic4;
+                imgCont4.src = imgO[curPic4].src;
+
+                 curPic5 = (++curPic5 > picPaths.length-1)? 0 : curPic5;
+                imgCont5.src = imgO[curPic5].src;
+
+                 curPic6 = (++curPic6 > picPaths.length-1)? 0 : curPic6;
+                imgCont6.src = imgO[curPic6].src;
+
+                  
+
+               
+            }
+
+            window.onload=function() {
+                imgCont1 = document.getElementById('img1');
+
+
+                imgCont2 = document.getElementById('img2');
+
+                imgCont3 = document.getElementById('img3');
+
+                imgCont4 = document.getElementById('img4');
+
+                imgCont5 = document.getElementById('img5');
+
+                imgCont6= document.getElementById('img6');
+
+
+
+                swapImage();
+
+
+
+
+
+
+
+
+
+            }
+
+          </script>
+        
+  <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+
+<div class="count-particles">
+  
+</div>
+
+
+<div id="particles-js"></div>
+
+
+
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+
+
+
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+
+<img  id="img1" src="images/1.jpg" alt="image1" style="width:155px;height:155px;"></div>
+
+<img id="img2" src="images/2.jpg" alt="image1" style="width:155px;height:155px;"></div>
+
+<img id="img3" src="images/3.jpg" alt="image1" style="width:155px;height:155px;"></div>
+
+ <img id="img4" src="images/4.jpg" alt="image1" style="width:155px;height:155px;"></div>
+ <img id="img5" src="images/5.jpg" alt="image1" style="width:155px;height:155px;"></div>
+<img id="img6" src="images/6.jpg" alt="image1" style="width:155px;height:155px;"></div>
+
+
+
+
+
+
+</body>
+</html>
